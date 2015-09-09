@@ -119,30 +119,30 @@ gulp.task('fonts', function () {
 });
 
 // // Scan Your HTML For Assets & Optimize Them
-// gulp.task('html', function () {
-//   var assets = $.useref.assets({searchPath: ['.tmp', 'app', 'dist']});
+gulp.task('html', function () {
+  var assets = $.useref.assets({searchPath: ['.tmp', 'app', 'dist']});
 
-//   return gulp.src(['app/**/*.html', '!app/{elements,test}/**/*.html'])
-//     // Replace path for vulcanized assets
-//     .pipe($.if('*.html', $.replace('elements/elements.html', 'elements/elements.vulcanized.html')))
-//     .pipe(assets)
-//     // Concatenate And Minify JavaScript
-//     .pipe($.if('*.js', $.uglify({preserveComments: 'some'})))
-//     // Concatenate And Minify Styles
-//     // In case you are still using useref build blocks
-//     .pipe($.if('*.css', $.cssmin()))
-//     .pipe(assets.restore())
-//     .pipe($.useref())
-//     // Minify Any HTML
-//     .pipe($.if('*.html', $.minifyHtml({
-//       quotes: true,
-//       empty: true,
-//       spare: true
-//     })))
-//     // Output Files
-//     .pipe(gulp.dest('dist'))
-//     .pipe($.size({title: 'html'}));
-// });
+  return gulp.src(['app/**/*.html', '!app/{elements,test}/**/*.html'])
+    // Replace path for vulcanized assets
+    .pipe($.if('*.html', $.replace('elements/elements.html', 'elements/elements.vulcanized.html')))
+    .pipe(assets)
+    // Concatenate And Minify JavaScript
+    .pipe($.if('*.js', $.uglify({preserveComments: 'some'})))
+    // Concatenate And Minify Styles
+    // In case you are still using useref build blocks
+    .pipe($.if('*.css', $.cssmin()))
+    .pipe(assets.restore())
+    .pipe($.useref())
+    // Minify Any HTML
+    .pipe($.if('*.html', $.minifyHtml({
+      quotes: true,
+      empty: true,
+      spare: true
+    })))
+    // Output Files
+    .pipe(gulp.dest('dist'))
+    .pipe($.size({title: 'html'}));
+});
 
 // // Vulcanize imports
 // gulp.task('vulcanize', function () {
@@ -230,16 +230,14 @@ gulp.task('default', ['styles', 'images'], function () {
 //   });
 // });
 
-// // Build Production Files, the Default Task
-// gulp.task('default', ['clean'], function (cb) {
-//   runSequence(
-//     ['copy', 'styles'],
-//     'elements',
-//     ['jshint', 'images', 'fonts', 'html'],
-//     'vulcanize',
-//     cb);
-//     // Note: add , 'precache' , after 'vulcanize', if your are going to use Service Worker
-// });
+// Build Production Files, the Default Task
+gulp.task('build', ['clean'], function (cb) {
+  runSequence(
+    ['copy', 'styles'],
+    ['jshint', 'images', 'fonts', 'html'],
+    cb);
+    // Note: add , 'precache' , after 'vulcanize', if your are going to use Service Worker
+});
 
 // Load custom tasks from the `tasks` directory
 try { require('require-dir')('tasks'); } catch (err) {}
