@@ -6,7 +6,6 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>#Just_Lol_Stuff</title>
-  <!-- Place favicon.ico in the `app/` directory -->
 
   <!-- Chrome for Android theme color -->
   <meta name="theme-color" content="#303F9F">
@@ -14,17 +13,28 @@
   <!-- Tile color for Win8 -->
   <meta name="msapplication-TileColor" content="#3372DF">
 
-  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/layout.css">
   <link rel="stylesheet" href="styles/main.css">
-  <!-- endbuild-->
+
 </head>
 
 <body unresolved class="fullbleed layout vertical">
   <span id="browser-sync-binding"></span>
-  <h1>This is the header YOOOOOOO</h1>
+  <div id="actionBar" class="layout horizontal center">
+    <div class="blurBg">
+      <div class="image"></div>
+    </div>
+    <input type="text" class="flex" />
+  </div>
+  <div id="content" class="flex">
+    <div class="card">
+      <h1>Amet modo quo eu</h1>
+      <p>Lorem ipsum dolor sit amet, at eam tempor iriure tibique, vix semper utamur forensibus ut. Vix dolor facilis scaevola an, atomorum voluptatum ex mea, mutat dicta corpora ex vel. Summo deseruisse vim eu, ea congue temporibus nam. Tollit splendide ius in, eos et cibo utinam consequuntur. Novum voluptaria eum an, at cibo nominavi mea.</p>
+    </div>
+  </div>
 
   <script src="scripts/app.js"></script>
-  <!-- endbuild-->
 </body>
 
 </html>

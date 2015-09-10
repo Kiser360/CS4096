@@ -1,2 +1,86 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300);
+* {
+  box-sizing: border-box;
+}
 body {
+	background:#151515;
+	background: url(http://i.imgur.com/LbfaGfn.jpg?1) top center no-repeat #151515;
+	box-shadow: 0 -20vh 100px 0px rgba(0, 0, 0, .8) inset, 0 -15vh 100px 0px #151515 inset;
+	font-size: 100%;
+	overflow: hidden;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	color: white;
+}
+input:focus,
+input:active {
+  outline: none;
+}
+input {
+  color:white;
+  text-align:center;
+}
+h2,
+h1 {
+  font-family: "Lato";
+  font-weight:300;
+  font-size:3em;
+  margin-bottom:1.5rem;
+}
+p {
+  text-shadow: 0px 0px 4px black;
+}
+.blurBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  -webkit-filter: blur(8px);
+  filter: blur(8px);
+  z-index: -1;
+}
+
+.blurBg .image {
+  background: url(http://i.imgur.com/LbfaGfn.jpg?1g) top center no-repeat #333;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#actionBar {
+	position:relative;
+  height: 4.5rem;
+  padding:1em;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(100, 100, 100, .8);
+  background: rgba(0, 0, 0, .3);
+  box-shadow: 0px -25px 25px -10px rgba(100, 100, 100, .3) inset;
+}
+
+#actionBar input {
+  padding: 8px;
+  height: 2.5rem;
+  border: none;
+  background: rgba(22, 22, 22, .8);
+  border: 1px solid black;
+  box-shadow:0px 0px 0px 1px #505050 inset;
+  border-radius: 3px;
+}
+
+#content {
+  position:relative;
+  overflow-y: auto;
+  padding: 5em 2em;
+}
+
+#content .card {
+  background:#333;
+  padding:1em;
+  border:1px solid black;
+  box-shadow:1px 1px 8px 0px rgba(60,60,60,.4), 0px 0px 0px 1px #505050 inset;
+  margin:2em auto;
+  border-radius:3px;
 }
