@@ -15,22 +15,28 @@
 
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/layout.css">
+  <link href="styles/mdi/materialdesignicons.css" media="all" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="styles/main.css">
 
 </head>
 
 <body unresolved class="fullbleed layout vertical">
   <span id="browser-sync-binding"></span>
-  <div id="actionBar" class="layout horizontal center">
+  <div id="actionBar" class="layout horizontal center-center">
     <div class="blurBg">
       <div class="image"></div>
     </div>
-    <input type="text" class="flex" />
+    <div id="search" class="flex layout horizontal center border">
+      <i class="mdi mdi-magnify"></i>
+        <input type="text" class="flex" />
+    </div>
+    <div id="Jungle" class="button toggle border selected">J</div>
+    <div id="Support" class="button toggle border">S</div>
   </div>
   <div id="content" class="flex">
-    <div class="card">
-      <h1>Amet modo quo eu</h1>
-      <p>Lorem ipsum dolor sit amet, at eam tempor iriure tibique, vix semper utamur forensibus ut. Vix dolor facilis scaevola an, atomorum voluptatum ex mea, mutat dicta corpora ex vel. Summo deseruisse vim eu, ea congue temporibus nam. Tollit splendide ius in, eos et cibo utinam consequuntur. Novum voluptaria eum an, at cibo nominavi mea.</p>
+    <div class="card border">
+      <h1>Welcome to #Just_Lol_stuff</h1>
+      <p>Here we use some super smart data processing to make a build tailored from 1000+ games of high level ranked play.  Just enter a champion name above, select if you will be playing support or jungle, then we will generate a build just for you!</p>
     </div>
   </div>
 
