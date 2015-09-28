@@ -1,5 +1,5 @@
 var roleHandler = function(e) {
-  var newRole = "#" + e.target.id
+  var newRole = "#" + e.target.id;
   document.querySelector(newRole).classList.toggle("selected");
   if (newRole == "#Jungle") {
     document.querySelector("#Support").classList.remove("selected");
