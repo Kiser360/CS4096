@@ -28,12 +28,14 @@
     "run-sequence": "^1.0.2"
   },
   "scripts": {
-    "start": "gulp"
+    "start": "node index.js"
   },
   "engines": {
     "node": ">=0.10.0"
   },
   "dependencies": {
-    "mdi": "^1.2.65"
+    "mdi": "^1.2.65",
+    "ejs": "2.3.3",
+    "express": "4.13.3"
   }
 }
