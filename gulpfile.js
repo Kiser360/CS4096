@@ -144,6 +144,13 @@ gulp.task('html', function () {
     .pipe($.size({title: 'html'}));
 });
 
+gulp.task('scripts', function () {
+  return gulp.src(['app/scripts/**/*.js'])
+      .pipe($.if('*.js', $.uglify({preserveComments: 'some'})))
+      .pipe(gulp.dest('public/scripts'))
+      .pipe($.size({title: 'scripts'}));
+});
+
 // Clean Output Directory
 gulp.task('clean', del.bind(null, ['.tmp', 'public']));
 
@@ -204,7 +211,7 @@ gulp.task('default', ['styles', 'images'], function () {
 // Build Production Files, the Default Task
 gulp.task('build', ['clean'], function (cb) {
   runSequence(
-    ['copy', 'styles'],
+    ['copy', 'styles', 'scripts'],
     ['jshint', 'images', 'fonts', 'html'],
     cb);
     // Note: add , 'precache' , after 'vulcanize', if your are going to use Service Worker
