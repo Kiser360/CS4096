@@ -32,5 +32,8 @@
   },
   "engines": {
     "node": ">=0.10.0"
+  },
+  "dependencies": {
+    "mdi": "^1.2.65"
   }
 }
