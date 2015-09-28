@@ -1,12 +1,14 @@
-var roleHandler = function(e) {
-  var newRole = "#" + e.target.id;
-  document.querySelector(newRole).classList.toggle("selected");
-  if (newRole == "#Jungle") {
-    document.querySelector("#Support").classList.remove("selected");
-  }
-  else {
-    document.querySelector("#Jungle").classList.remove("selected");
-  }
-};
-document.querySelector("#Jungle").addEventListener("click", roleHandler);
-document.querySelector("#Support").addEventListener("click", roleHandler);
+var app = angular.module('app', ['ngRoute']);
+
+console.log("Loading App router");
+
+app.config(["$routeProvider", function($routeProvider){
+    $routeProvider
+        .when('/', {
+            controller: 'home',
+            templateUrl: 'templates/home.html'
+        })
+        .otherwise('/');
+}]);
+
+console.log("Loaded Router");

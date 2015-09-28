@@ -20,27 +20,16 @@
 
 </head>
 
-<body unresolved class="fullbleed layout vertical">
+<body ng-app="app" class="fullbleed layout vertical">
   <span id="browser-sync-binding"></span>
-  <div id="actionBar" class="layout horizontal center-center">
-    <div class="blurBg">
-      <div class="image"></div>
-    </div>
-    <div id="search" class="flex layout horizontal center border">
-      <i class="mdi mdi-magnify"></i>
-        <input type="text" class="flex" />
-    </div>
-    <div id="Jungle" class="button toggle border selected">J</div>
-    <div id="Support" class="button toggle border">S</div>
-  </div>
-  <div id="content" class="flex">
-    <div class="card border">
-      <h1>Welcome to #Just_Lol_stuff</h1>
-      <p>Here we use some super smart data processing to make a build tailored from 1000+ games of high level ranked play.  Just enter a champion name above, select if you will be playing support or jungle, then we will generate a build just for you!</p>
-    </div>
-  </div>
+  <ng-view class="flex layout vertical"></ng-view>
 
+  <script src="scripts/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.js"></script>
   <script src="scripts/app.js"></script>
+
+  <!-- Controllers -->
+  <script src="scripts/controllers/home.js"></script>
 </body>
 
 </html>
