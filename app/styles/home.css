@@ -1,0 +1,31 @@
+.card .header {
+	background: linear-gradient(to bottom, rgba(211,34,24,1) 0%,rgba(211,34,24,1) 40%,rgba(169,33,26,1) 100%);
+}
+.header .heroImg {
+	height:4rem;
+	width:4rem;
+	background:cyan;
+}
+.header .heroInfo {
+	padding:.5em;
+}
+.header .heroInfo :first-child {
+	font-size:1.5rem;
+	font-weight:600;
+}
+.header .heroInfo :last-child {
+	opacity:.72;
+	text-transform:lowercase;
+}
+.card .item {
+	height:4rem;
+	background:#333;
+}
+.card .item .pic {
+	width:3rem;
+	height:3rem;
+	margin:.5rem;
+	border-radius:50%;
+	background:cyan;
+	padding:.5rem;
+}
