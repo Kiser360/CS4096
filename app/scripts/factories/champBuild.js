@@ -1,20 +1,22 @@
-app.factory('champBuild',['$http', function($http){
+app.factory('champBuild',['$http', 'items', function($http, $items){
     var self = this;
-    self.champ = null;
-    self.ready = false;
+    self.champ = {name: "", description: "", items: ""}
 
-    $http.get("champs.json").success(function(data){
-        self.ready = true;
-        self.champ = data;
-        self.onReady(data);
-    });
+    self.getChampion = function(name, cb) {
+        if (!self.champ.name || self.champ.name != name) {
+            $http.get("champs.json").success(function(data){
+                self.champ = data;
 
-    self.getchamp = function() {
-        console.log("Did you ask for wukong?");
-    };
+                $items.getItem('1001', function(itemData) {
+                    console.log(itemData);
+                });
 
-    self.onReady = function(data) {
-        console.log(data.champ);
+                cb(data);
+            });
+        }
+        else {
+            cb(self.champ);
+        }
     };
 
     return self;

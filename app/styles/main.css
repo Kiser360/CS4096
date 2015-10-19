@@ -1,17 +1,21 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300);
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100);
+@font-face {
+    font-family:"Comic Neue";
+    src: url("../fonts/ComicNeue-Angular-Regular.ttf") /* TTF file for CSS3 browsers */
+}
 * {
   box-sizing: border-box;
 }
 body {
-	background:#151515;
-	background: url(http://i.imgur.com/LbfaGfn.jpg?1) top center no-repeat #151515;
-	box-shadow: 0 -20vh 100px 0px rgba(0, 0, 0, .8) inset, 0 -15vh 100px 0px #151515 inset;
+	background:#232C33;
+	/*background: url(http://i.imgur.com/LbfaGfn.jpg?1) top center no-repeat #151515;*/
+	/*box-shadow: 0 -20vh 100px 0px rgba(0, 0, 0, .8) inset, 0 -15vh 100px 0px #151515 inset;*/
 	font-size: 100%;
 	overflow: hidden;
 	-webkit-transform: translate3d(0, 0, 0);
 	transform: translate3d(0, 0, 0);
-	color: white;
+	color: #707B8A;
 }
 input:focus,
 input:active {
@@ -24,12 +28,13 @@ input {
 h2,
 h1 {
   font-family: "Roboto";
-  font-weight:100;
+  font-weight:300;
   font-size:3em;
   margin-bottom:1.5rem;
+  color:#707B8A;
 }
 p {
-	font-family:"Lato";
+	font-family:"Comic Neue";
   text-shadow: 0px 0px 4px black;
 }
 i {
@@ -39,7 +44,6 @@ i {
 }
 .border {
   border: 1px solid black;
-  box-shadow:0px 0px 0px 1px #505050 inset;
 }
 .noselect {
     -webkit-touch-callout: none;
@@ -62,7 +66,8 @@ i {
 }
 
 .blurBg .image {
-  background: url(http://i.imgur.com/LbfaGfn.jpg?1g) top center no-repeat #333;
+  /*background: url(http://i.imgur.com/LbfaGfn.jpg?1g) top center no-repeat #333;*/
+  background:#333;
   position: absolute;
   top: 0;
   left: 0;
@@ -100,7 +105,7 @@ i {
   overflow: hidden;
   border-bottom: 1px solid rgba(100, 100, 100, .8);
   background: rgba(0, 0, 0, .3);
-  box-shadow: 0px -25px 25px -10px rgba(100, 100, 100, .3) inset;
+  /*box-shadow: 0px -25px 25px -10px rgba(100, 100, 100, .3) inset;*/
 }
 
 #actionBar #search {
@@ -122,10 +127,13 @@ i {
 }
 
 #content .card {
-  background:#3c424e;
+  background:#D6DEE5;
+  color: #707B8A;
   margin:0 auto;
   margin-bottom:2rem;
   border-radius:3px;
+  min-width:240px;
+  position:relative;
 }
 #content .card.padded {
   padding:1em;

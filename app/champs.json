@@ -2,34 +2,29 @@
 	"name": "Lulu",
 	"description": "Looks really not boring",
 	"items": [
-		{"name": "Rabadon's Deathcap", 
-			"stats": "shit tons of AP",
-			"description": "makes you do lots and lots of damage"
+		{
+			"name": "Rabadon's Deathcap", 
+			"stats": "shit tons of AP"
 		},
 		{
 			"name": "Sorcerer's Shoes", 
-			"stats": "gotta go fast + little bit of mag pen",
-			"description": "run faster"
+			"stats": "gotta go fast + little bit of mag pen"
 		},
 		{
 			"name": "Morellonomicon", 
-			"stats": "Mana Regen and CDR",
-			"description": "cast more shit faster"
+			"stats": "Mana Regen and CDR"
 		},
 		{
 			"name": "Luden's Echo", 
-			"stats": "movespeed + AP",
-			"description": "more burst + gotta go faster"
+			"stats": "movespeed + AP"
 		},
 		{
 			"name": "Void Staff", 
-			"stats": "shit tons of Mag Pen",
-			"description": "makes your damage do more"
+			"stats": "shit tons of Mag Pen"
 		},
 		{
 			"name": "Zhonay's hourglass", 
-			"stats": "Armor + AP",
-			"description": "Golden time"
+			"stats": "Armor + AP"
 		}
 	]
 }
