@@ -26,29 +26,54 @@
 }
 .item .pic {
 	position:absolute;
-	top:-1rem;
-	left:-1rem;
-	min-width:8rem;
-	min-height:3rem;
-	background:cyan;
-	padding:.5rem;
-	transform: skew(-45deg);
-	overflow:hidden;
-	/*border:1px solid black;
-	border-left:2px solid black;
-	border-right:2px solid black;*/
+	display:inline-block;
+	top:-10px;
+	left:45px;
+	width:85px;
+	height:85px;
+	background:url("http://ddragon.leagueoflegends.com/cdn/5.20.1/img/item/1319.png");
+	background-repeat: no-repeat;
+	background-size:100%;
 }
-.item .pic > div {
+.item .ribbon {
 	position:absolute;
-	top:0;
-	left:-20%;
-	transform: skew(45deg);
-	width:140%;
-	height:100%;
-	background:tomato;
-	background: url('http://ddragon.leagueoflegends.com/cdn/5.19.1/img/champion/Kindred.png') no-repeat;
-	background-position:50% 50%;
-	background-size:cover;
+	top:-.6rem; left:-.6rem;
+	z-index:1;
+	overflow:hidden;
+	width:125px;
+	height:125px;
+	text-align:right;
+}
+.ribbon::after {
+	content: "";
+	position: absolute; right: 1px; top: 1px;
+	z-index: -1;
+	border-left: 4px solid transparent;
+	border-right: 4px solid #79A70A;
+	border-bottom: 4px solid #79A70A;
+	border-top: 4px solid transparent;
+}
+.ribbon::before {
+	content: "";
+	position: absolute; left: 1px; bottom: 1px;
+	z-index: -1;
+	border-left: 4px solid transparent;
+	border-right: 4px solid #79A70A;
+	border-bottom: 4px solid #79A70A;
+	border-top: 4px solid transparent;
+}
+.item .ribbon > div {
+	position:absolute;
+	top:.4rem;
+	left:-3rem;
+	width:175px;
+	height:65px;
+	background:black;
+	transform-origin: 50% 50%;
+	-webkit-transform-orgin: 50% 50%;
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	overflow:hidden;
 }
 .item .name {
 	text-align:center;
