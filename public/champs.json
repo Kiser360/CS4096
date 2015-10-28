@@ -1,0 +1,30 @@
+{
+	"name": "Lulu",
+	"description": "Looks really not boring",
+	"items": [
+		{
+			"name": "Rabadon's Deathcap", 
+			"stats": "shit tons of AP"
+		},
+		{
+			"name": "Sorcerer's Shoes", 
+			"stats": "gotta go fast + little bit of mag pen"
+		},
+		{
+			"name": "Morellonomicon", 
+			"stats": "Mana Regen and CDR"
+		},
+		{
+			"name": "Luden's Echo", 
+			"stats": "movespeed + AP"
+		},
+		{
+			"name": "Void Staff", 
+			"stats": "shit tons of Mag Pen"
+		},
+		{
+			"name": "Zhonay's hourglass", 
+			"stats": "Armor + AP"
+		}
+	]
+}
