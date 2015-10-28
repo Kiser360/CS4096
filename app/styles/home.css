@@ -1,87 +1,63 @@
-.header {
-	/*background: linear-gradient(to bottom, rgba(211,34,24,1) 0%,rgba(211,34,24,1) 40%,rgba(169,33,26,1) 100%);*/
-}
-.header .heroImg {
-	height:4rem;
-	width:4rem;
-	background:cyan;
-}
-.header .heroInfo {
-	padding:.5em;
-}
-.header .heroInfo :first-child {
-	font-size:1.5rem;
-	font-weight:600;
-}
-.header .heroInfo :last-child {
-	opacity:.72;
-	text-transform:lowercase;
-}
-.item {
+#actionBar {
+	position:relative;
+	min-height:64px;
+	max-height:64px;
 	background:#333;
-	width:29%;
-	margin:0 1rem!important;
-	margin-top:2rem !important;
-	padding:1rem;
 }
-.item .pic {
-	position:absolute;
-	display:inline-block;
-	top:-10px;
-	left:45px;
-	width:85px;
-	height:85px;
-	background:url("http://ddragon.leagueoflegends.com/cdn/5.20.1/img/item/1319.png");
-	background-repeat: no-repeat;
-	background-size:100%;
+#logo {
+	position:relative;
+	left:-32px;
+	background:rgb(19,137,201);
+	padding:16px;
+	padding-left:48px;
+	padding-right:32px;
+	font-size:32px;
+	line-height: 32px;
+	transform:skew(45deg);
+	-webkit-transform:skew(45deg);
 }
-.item .ribbon {
+#logo::after {
+	content:'';
 	position:absolute;
-	top:-.6rem; left:-.6rem;
+	right:-16px;
+	top:0;
+	display:block;
+	height:100%;
+	width:16px;
+	background:rgba(19,137,201,.55);
 	z-index:1;
-	overflow:hidden;
-	width:125px;
-	height:125px;
-	text-align:right;
 }
-.ribbon::after {
-	content: "";
-	position: absolute; right: 1px; top: 1px;
-	z-index: -1;
-	border-left: 4px solid transparent;
-	border-right: 4px solid #79A70A;
-	border-bottom: 4px solid #79A70A;
-	border-top: 4px solid transparent;
+#logo span {
+	display:inline-block;
+	transform: skew(-45deg);
+	-webkit-transform: skew(-45deg);
 }
-.ribbon::before {
-	content: "";
-	position: absolute; left: 1px; bottom: 1px;
-	z-index: -1;
-	border-left: 4px solid transparent;
-	border-right: 4px solid #79A70A;
-	border-bottom: 4px solid #79A70A;
-	border-top: 4px solid transparent;
+#searchWrap {
+	padding:16px 32px;
 }
-.item .ribbon > div {
-	position:absolute;
-	top:.4rem;
-	left:-3rem;
-	width:175px;
-	height:65px;
-	background:black;
-	transform-origin: 50% 50%;
-	-webkit-transform-orgin: 50% 50%;
-	transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
-	overflow:hidden;
+#search input {
+	background:transparent;
+	margin:0;
+	padding:0;
+	border:none;
 }
-.item .name {
-	text-align:center;
-	font-size:2rem;
-	text-shadow:none;
-	color:#069E2A;
+#champResults {
+	overflow-x:hidden;
 }
-.item .desc {
-	font-family:"Comic Neue";
-	font-size:1rem;
+
+#champResults #imgContainer {
+	position:relative;
+	width:100vw;
+	height: 50vw;
+	max-height:360px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	overflow-x: hidden;
+}
+#champResults #imgContainer #champName {
+	position: absolute;
+	bottom: 16px;
+	left:16px;
+	font-size:48px;
+	line-height:1;
 }

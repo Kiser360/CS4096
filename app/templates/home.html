@@ -1,38 +1,25 @@
 <div id="actionBar" class="layout horizontal center-center">
-  <div class="blurBg">
-    <div class="image"></div>
+  <div id="logo">
+    <span>#JLS</span>
   </div>
-  <div id="search" class="flex layout horizontal center border">
-    <i class="mdi mdi-magnify"></i>
+  <div id="searchWrap" class="flex">
+    <div id="search" class="layout horizontal center border">
+      <i class="mdi mdi-magnify"></i>
       <input type="text" class="flex" />
+    </div>
   </div>
-  <div id="Jungle" class="button toggle border selected">J</div>
-  <div id="Support" class="button toggle border">S</div>
 </div>
-<div id="content" class="flex">
-  <div class="">
-    <div class="header layout horizontal">
-      <div class="heroImg"></div>
-      <div class="heroInfo">
-        <div>{{champion.name}}</div>
-        <div>{{champion.description}}</div>
+<div class="flex layout horizontal scroll">
+  <div id="champResults" class="layout vertical scroll">
+    <div id="imgContainer" style="background-image: url(http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lulu_2.jpg)" class="flex-none">
+      <div id="champName">{{champion.name}}</div>
+    </div>
+    <div ng-repeat="item in champion.items" class="flex-none layout horizontal center listItem">
+      <img src="{{item.image}}" class="image flex-none" />
+      <div class="layout vertical self-stretch">
+        <div class="mainText self-start">{{item.name}}</div>
+        <div class="subText">{{item.description}}</div>
       </div>
     </div>
-    <div id="buildWrap" class="layout horizontal wrap around-justified">
-      <div class="item card layout vertical" ng-repeat="item in champion.items as item">
-        <div class="ribbon">
-          <div><span class="pic"></span></div>
-        </div>
-        <div class="desc">
-          <h1 class="name">{{item.name}}</h1>
-          <div class="stats">{{item.stats}}</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <br>
-  <div class="card border padded">
-    <h1>Welcome to #Just_Lol_stuff</h1>
-    <p>Here we use some super smart data processing to make a build tailored from 1000+ games of high level ranked play.  Just enter a champion name above, select if you will be playing support or jungle, then we will generate a build just for you!</p>
   </div>
 </div>

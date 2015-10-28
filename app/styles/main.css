@@ -21,10 +21,6 @@ input:focus,
 input:active {
   outline: none;
 }
-input {
-  color:white;
-  text-align:center;
-}
 h2,
 h1 {
   font-family: "Roboto";
@@ -53,91 +49,26 @@ i {
     -ms-user-select: none;
     user-select: none;
 }
-
-.blurBg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 200%;
-  -webkit-filter: blur(8px);
-  filter: blur(8px);
-  z-index: -1;
+.listItem {
+  height: 72px;
+  padding:8px 16px;
+  background:cyan;
+  border:1px dashed black;
 }
-
-.blurBg .image {
-  /*background: url(http://i.imgur.com/LbfaGfn.jpg?1g) top center no-repeat #333;*/
-  background:#333;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
+.listItem .image {
+  height:56px;
+  width:56px;
+  background:green;
+  border-radius:50%;
+  margin-right:16px;
 }
-
-.button {
-	padding:.5rem;
-	margin-left:2rem;
-	width:2em;
-	text-align:center;
-	font-size:1em;
-	text-transform: uppercase;
-	background: #333;
-	-webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  cursor:pointer;
-  border-radius:3px;
+.listItem .mainText {
+  font-size:24px;
+  line-height:1;
 }
-.button.toggle.selected {
-	color:tomato;
-	background:#181818;
-	box-shadow:none;
-}
-
-#actionBar {
-	position:relative;
-  height: 4.5rem;
-  padding:1em;
-  overflow: hidden;
-  border-bottom: 1px solid rgba(100, 100, 100, .8);
-  background: rgba(0, 0, 0, .3);
-  /*box-shadow: 0px -25px 25px -10px rgba(100, 100, 100, .3) inset;*/
-}
-
-#actionBar #search {
-  padding: 8px;
-  height: 2.5rem;
-  background: rgba(22, 22, 22, .8);
-  border-radius: 3px;
-  max-width:40rem;
-}
-#search input {
-	background:transparent;
-  border: none;
-}
-
-#content {
-  position:relative;
-  overflow-y: auto;
-  padding: 2em 2em;
-}
-
-#content .card {
-  background:#D6DEE5;
-  color: #707B8A;
-  margin:0 auto;
-  margin-bottom:2rem;
-  border-radius:3px;
-  min-width:240px;
-  position:relative;
-}
-#content .card.padded {
-  padding:1em;
-}
-.text-shadow {
-  text-shadow: 0px 0px 4px black;
+.listItem .subText {
+  font-size:14px;
+  line-height:1;
+  max-height:29px;
+  overflow:hidden;
 }

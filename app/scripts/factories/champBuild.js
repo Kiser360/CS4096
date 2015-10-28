@@ -10,8 +10,8 @@ app.factory('champBuild',['$http', 'items', function($http, $items){
                 self.champ.items = [];
 
                 for (var i = 0; i < 6; i++) {
-                    $items.getItem('1001', function(itemData) {
-                        self.champ.items.push(itemData);
+                    $items.getItem(data.items[i], function(itemData) {
+                        self.champ.items.push(clone(itemData));
                         console.log(itemData);
                         if (self.champ.items.length >= 6) {
                             cb(self.champ);
@@ -23,6 +23,15 @@ app.factory('champBuild',['$http', 'items', function($http, $items){
         else {
             cb(self.champ);
         }
+    };
+
+    function clone(obj) {
+        if (null == obj || "object" != typeof obj) return obj;
+        var copy = obj.constructor();
+        for (var attr in obj) {
+            if (obj.hasOwnProperty(attr)) copy[attr] = obj[attr];
+        }
+        return copy;
     };
 
     return self;
