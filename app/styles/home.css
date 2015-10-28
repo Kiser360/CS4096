@@ -53,8 +53,9 @@
 	max-height:360px;
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-position:center;
 	overflow-x: hidden;
-	box-shadow:0px -50px 125px 0px black inset;
+	box-shadow:0px -100px 175px 0px black inset;
 }
 #champResults #imgContainer #champName {
 	position: absolute;
