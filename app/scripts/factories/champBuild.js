@@ -4,7 +4,7 @@ app.factory('champBuild',['$http', 'items', function($http, $items){
 
     self.getChampion = function(name, cb) {
         if (!self.champ.name || self.champ.name != name) {
-            $http.get("champItem.json").success(function(data){
+            $http.get("http://lolstuff.elasticbeanstalk.com/lolstuff/build/" + name).success(function(data){
                 self.champ.name = data.name;
                 self.champ.title = data.title;
                 self.champ.items = [];
