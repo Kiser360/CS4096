@@ -11,8 +11,18 @@
     </div>
   </div>
 </div>
+<div id="suggestions" class="layout vertical border">
+  <div class="suggestion" ng-repeat="suggestion in suggestions">{{suggestion.name}}</div>
+</div>
 <div class="flex layout horizontal scroll">
-  <div id="champResults" class="layout vertical scroll">
+  <div id="matchResults" class="layout vertical scroll flex-none">
+    <div class="layout horizontal"></div>
+    <div class="layout horizontal"></div>
+    <div class="layout horizontal"></div>
+    <div class="layout horizontal"></div>
+    <div class="layout horizontal"></div>
+  </div>
+  <div id="champResults" class="layout vertical scroll flex">
     <div id="imgContainer" style="background-image: url(http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lulu_0.jpg)" class="flex-none">
       <div id="champName">{{champion.name}}</div>
     </div>

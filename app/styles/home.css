@@ -45,20 +45,34 @@
 #search i {
 	color: rgb(19,137,201);
 }
+#suggestions {
+	position:absolute;
+	left:10vw;
+	width:80vw;
+	background:cyan;
+	z-index:4;
+	box-shadow:0px 1px 6px 0px black;
+	border-top:none;
+}
+#suggestions .suggestion {
+	padding:1rem;
+}
 #champResults {
 	overflow-x:hidden;
+	box-shadow: 0px 0 10px 0px black;
+	z-index:2;
 }
 
 #champResults #imgContainer {
 	position:relative;
-	width:100vw;
+	width:100%;
 	height: 50vw;
-	max-height:360px;
+	max-height:240px;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position:center;
 	overflow-x: hidden;
-	box-shadow:0px -100px 175px 0px black inset;
+	box-shadow:0px -5rem 0px 0px rgba(0, 0, 0, .5) inset;
 }
 #champResults #imgContainer #champName {
 	position: absolute;
@@ -66,4 +80,23 @@
 	left:16px;
 	font-size:48px;
 	line-height:1;
+}
+#matchResults {
+	overflow-y:auto;
+	width:360px;
+}
+#matchResults > * {
+	flex:none;
+}
+#matchResults > .horizontal {
+	height: 86px;
+	margin:4px 0;
+	background:tomato;
+	z-index:0;
+}
+#matchResults > .horizontal:first-child {
+	margin-top:8px;
+}
+#matchResults > .horizontal:hover {
+	background:cyan;
 }

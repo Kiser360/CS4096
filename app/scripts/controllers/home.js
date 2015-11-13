@@ -1,5 +1,9 @@
 app.controller('home', ['$scope', 'champBuild', function($scope, champBuild){
 	$scope.champion = {};
+	$scope.suggestions = [
+		{"name": "Ahri"},
+		{"name": "Aatrox"}
+	];
 
 	champBuild.getChampion("", function(data){
 		$scope.champion = data;

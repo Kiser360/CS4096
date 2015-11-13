@@ -72,7 +72,7 @@ i {
 }
 .listItem .subText {
   font-size:14px;
-  line-height:1;
+  line-height:1.1;
   max-height:43px;
   overflow:hidden;
   opacity:.57;
