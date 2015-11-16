@@ -5,7 +5,7 @@ app.controller('home', ['$scope', 'champBuild', function($scope, champBuild){
 		{"name": "Aatrox"}
 	];
 
-	champBuild.getChampion("", function(data){
+	champBuild.getChampion("Aatrox", function(data){
 		$scope.champion = data;
 		console.log($scope.champion);
 	});

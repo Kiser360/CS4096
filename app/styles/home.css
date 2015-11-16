@@ -55,7 +55,18 @@
 	border-top:none;
 }
 #suggestions .suggestion {
-	padding:1rem;
+	padding:.5rem;
+	width: 250px;
+	background:green;
+	border:1px dashed black;
+}
+#suggestions .suggestion img {
+	border-radius:50%;
+	background:tomato;
+	height:3rem;
+	width:3rem;
+	margin-right:1rem;
+	outline:none;
 }
 #champResults {
 	overflow-x:hidden;

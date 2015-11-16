@@ -11,8 +11,11 @@
     </div>
   </div>
 </div>
-<div id="suggestions" class="layout vertical border">
-  <div class="suggestion" ng-repeat="suggestion in suggestions">{{suggestion.name}}</div>
+<div id="suggestions" class="layout horizontal wrap border">
+  <div class="suggestion layout horizontal center" ng-repeat="suggestion in suggestions">
+    <img src="http://ddragon.leagueoflegends.com/cdn/5.22.3/img/champion/{{suggestion.name}}.png" />
+    <span>{{suggestion.name}}</span>
+  </div>
 </div>
 <div class="flex layout horizontal scroll">
   <div id="matchResults" class="layout vertical scroll flex-none">

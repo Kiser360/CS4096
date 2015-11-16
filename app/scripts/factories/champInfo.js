@@ -1,6 +1,7 @@
 app.factory('champInfo',['$http', function($http){
     var self = this;
-    self.champInfo = {name: "", title: "", lore: "", blurb: "", image: ""}
+    var self.allChamps = {};
+    var self.champInfo = {name: "", title: "", lore: "", blurb: "", image: ""}
     
     self.getChampInfo = function(id, cb) {
         $http.get("https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion/" + id + "?champData=all&api_key=eb677857-8e3d-4c41-903d-dd4c11d20838")
@@ -13,6 +14,12 @@ app.factory('champInfo',['$http', function($http){
                 cb(self.champInfo);
             });
     };
+
+    $http.get("https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?api_key=eb677857-8e3d-4c41-903d-dd4c11d20838")
+        .success(function(data) {
+            self.allChamps = data.data;
+            console.log(self.allChamps);
+        });
 
     return self;
 }]);
