@@ -11,8 +11,11 @@
     </div>
   </div>
 </div>
-<div id="suggestions" class="layout vertical border">
-  <div class="suggestion" ng-repeat="suggestion in suggestions">{{suggestion.name}}</div>
+<div id="suggestions" class="layout horizontal wrap border" ng-hide="{{suggestions.length}}">
+  <div class="suggestion layout horizontal center" ng-repeat="suggestion in suggestions" ng-click="suggestionClickHandler(suggestion.key)">
+    <img src="http://ddragon.leagueoflegends.com/cdn/5.23.1/img/champion/{{suggestion.name}}.png" />
+    <span>{{suggestion.name}}</span>
+  </div>
 </div>
 <div class="flex layout horizontal scroll">
   <div id="matchResults" class="layout vertical scroll flex-none">
@@ -23,7 +26,7 @@
     <div class="layout horizontal"></div>
   </div>
   <div id="champResults" class="layout vertical scroll flex">
-    <div id="imgContainer" style="background-image: url(http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lulu_0.jpg)" class="flex-none">
+    <div id="imgContainer" style="background-image: url({{champion.image}})" class="flex-none">
       <div id="champName">{{champion.name}}</div>
     </div>
     <div ng-repeat="item in champion.items" class="flex-none layout horizontal center listItem">

@@ -1,3 +1,6 @@
+/*#A54433 - Redest Brown*/
+/*#F3AE48 - Yellow*/
+
 #actionBar {
 	position:relative;
 	height:64px;
@@ -53,9 +56,24 @@
 	z-index:4;
 	box-shadow:0px 1px 6px 0px black;
 	border-top:none;
+	max-height:50vh;
+	overflow-y:auto;
 }
 #suggestions .suggestion {
-	padding:1rem;
+	padding:.5rem;
+	width: 250px;
+	cursor:pointer;
+}
+#suggestions .suggestion:hover {
+	background:green;
+}
+#suggestions .suggestion img {
+	border-radius:50%;
+	background:tomato;
+	height:3rem;
+	width:3rem;
+	margin-right:1rem;
+	outline:none;
 }
 #champResults {
 	overflow-x:hidden;
@@ -70,7 +88,7 @@
 	max-height:240px;
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position:center;
+	background-position:50% 25%;
 	overflow-x: hidden;
 	box-shadow:0px -5rem 0px 0px rgba(0, 0, 0, .5) inset;
 }
