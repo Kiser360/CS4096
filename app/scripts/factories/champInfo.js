@@ -1,7 +1,15 @@
 app.factory('champInfo',['$http', function($http){
     var self = this;
-    self.allChamps = {};
     self.champInfo = {name: "", title: "", lore: "", blurb: "", image: ""}
+
+    $http.get("https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?api_key=eb677857-8e3d-4c41-903d-dd4c11d20838")
+        .success(function(data) {
+            self.allChamps = [];
+            console.log(data.data);
+            for (champ in data.data) {
+                self.allChamps.push(champ);
+            }
+        });
     
     self.getChampInfo = function(id, cb) {
         $http.get("https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion/" + id + "?champData=all&api_key=eb677857-8e3d-4c41-903d-dd4c11d20838")
@@ -16,10 +24,22 @@ app.factory('champInfo',['$http', function($http){
             });
     };
 
-    $http.get("https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?api_key=eb677857-8e3d-4c41-903d-dd4c11d20838")
-        .success(function(data) {
-            self.allChamps = data.data;
-        });
+    self.getAllChamps = function() {
+        if (!self.allChamps) {
+            $http.get("https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?api_key=eb677857-8e3d-4c41-903d-dd4c11d20838")
+                .success(function(data) {
+                    self.allChamps = [];
+                    console.log(data.data);
+                    for (champ in data.data) {
+                        self.allChamps.push(champ);
+                    }
+                    return self.allChamps;
+                });
+        }
+        else {
+            return self.allChamps;
+        }
+    }
 
     return self;
 }]);

@@ -1,8 +1,6 @@
-app.controller('home', ['$scope', 'champBuild', function($scope, champBuild){
+app.controller('home', ['$scope', 'champBuild', 'champInfo', function($scope, champBuild, champInfo){
 	$scope.champion = {};
 	$scope.suggestions = [
-		// {"name": "Ahri"},
-		// {"name": "Aatrox"}
 	];
 
 	var allChamps = [
@@ -13,9 +11,9 @@ app.controller('home', ['$scope', 'champBuild', function($scope, champBuild){
 		"Hecarim"
 	]
 
-	champBuild.getChampion("Aatrox", function(data){
-		$scope.champion = data;
-	});
+	// champBuild.getChampion("Aatrox", function(data){
+	// 	$scope.champion = data;
+	// });
 
 	$scope.sanitizeChampKey = function() {
 		// Have to debounce otherwise tons of $apply() errors for being called before it finishes the loop
@@ -43,8 +41,9 @@ app.controller('home', ['$scope', 'champBuild', function($scope, champBuild){
 	var findSuggestions = function(key) {
 		$scope.suggestions = [];
 		if (key.length === 0) return;
+		var allChamps = champInfo.getAllChamps();
 		allChamps.forEach(function(champKey) {
-			if (champKey.indexOf(key) !== -1) {
+			if (champKey.search(key) !== -1 || champKey.search(key.toLowerCase()) !== -1) {
 				$scope.suggestions.push({"name": champKey, "key": champKey});
 			}
 		});
