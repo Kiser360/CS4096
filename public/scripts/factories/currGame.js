@@ -1,0 +1,1 @@
+app.factory("currGame",["$http",function(t){var o=this;return o.getGame=function(o,r){t.get("https://script.google.com/macros/s/AKfycbx3veZNTf8yMH9IdnvABAQuWj_twSDl7GoVNAuZh_AmxJDjTe8Q/exec").success(function(t){r(t)}).error(function(t){console.log(JSON.stringify(t)),r({data:"error"})})},o}]);
