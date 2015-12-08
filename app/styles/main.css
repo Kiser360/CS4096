@@ -50,8 +50,7 @@ i {
     user-select: none;
 }
 .listItem {
-  height: 86px;
-  padding:8px 16px;
+  padding:.5rem 1rem;
   border-bottom:1px solid rgba(0, 0, 0, .33);
 }
 .listItem:last-child {
@@ -73,7 +72,6 @@ i {
 .listItem .subText {
   font-size:14px;
   line-height:1.1;
-  max-height:43px;
   overflow:hidden;
   opacity:.57;
 }

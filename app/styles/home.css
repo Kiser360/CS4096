@@ -12,11 +12,11 @@
 	position:relative;
 	left:-32px;
 	background:rgb(19,137,201);
-	padding:16px;
-	padding-left:48px;
-	padding-right:32px;
-	font-size:32px;
-	line-height: 32px;
+	padding:.8rem;
+	padding-left:3rem;
+	padding-right:2rem;
+	font-size:2rem;
+	line-height: 2rem;
 	transform:skew(45deg);
 	-webkit-transform:skew(45deg);
 }
@@ -35,6 +35,15 @@
 	display:inline-block;
 	transform: skew(-45deg);
 	-webkit-transform: skew(-45deg);
+	overflow:hidden;
+	transition: 1s;
+	width:0;
+}
+#logo span:first-child.expand {
+	width:13rem;
+}
+#logo span:last-child{
+	width:0;
 }
 #searchWrap {
 	padding:16px 32px;
@@ -52,7 +61,7 @@
 	position:absolute;
 	left:10vw;
 	width:80vw;
-	background:cyan;
+	background:#333;
 	z-index:4;
 	box-shadow:0px 1px 6px 0px black;
 	border-top:none;
@@ -60,22 +69,24 @@
 	overflow-y:auto;
 }
 #suggestions .suggestion {
-	padding:.5rem;
-	width: 250px;
+	background:#222;
+	padding-right:1.5rem;
+	margin:.5rem 0;
 	cursor:pointer;
+	-webkit-clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
+	clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
 }
 #suggestions .suggestion:hover {
-	background:green;
+	background:rgb(19,137,201);
 }
 #suggestions .suggestion img {
-	border-radius:50%;
-	background:tomato;
 	height:3rem;
 	width:3rem;
 	margin-right:1rem;
 	outline:none;
 }
 #champResults {
+	position:relative;
 	overflow-x:hidden;
 	box-shadow: 0px 0 10px 0px black;
 	z-index:2;
@@ -100,21 +111,84 @@
 	line-height:1;
 }
 #matchResults {
-	overflow-y:auto;
-	width:360px;
+	overflow: hidden;
+	width:20rem;
+	position:relative;
+	padding-top:.75rem;
+	transition: .25s width;
+}
+#matchResults.hide {
+	width:0px !important;
 }
 #matchResults > * {
 	flex:none;
 }
 #matchResults > .horizontal {
-	height: 86px;
-	margin:4px 0;
-	background:tomato;
+	margin:.25rem 0;
 	z-index:0;
 }
 #matchResults > .horizontal:first-child {
-	margin-top:8px;
+	margin-top:.5rem;
 }
 #matchResults > .horizontal:hover {
-	background:cyan;
+}
+#matchResults .team img{
+	cursor:pointer;
+	width: 16%;
+	-webkit-clip-path: polygon(0 0, 85% 0, 100% 100%, 15% 100%);
+	clip-path: polygon(0 0, 85% 0, 100% 100%, 15% 100%);
+}
+#matchResults #playerDesc {
+	position:absolute;
+	bottom:0;
+	height:calc(100vh - 14rem);
+	width:100%;
+	background:#12161A;
+	transition:.5s transform;
+	-webkit-transform: translate3d(100%, 0, 0);
+	transform: translate3d(100%, 0, 0);
+}
+#matchResults #playerDesc.visible {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+#matchResults #playerDesc .header {
+	height:5rem;
+	background:rgb(19,137,201);
+}
+#playerDesc .header .loadingSplash {
+	height:11rem;
+	width:6rem;
+	background:black;
+	background-size:cover;
+	margin-left:.5rem;
+	margin-top:.5rem;
+}
+#playerDesc .header #playerName {
+	font-size:1.4rem;
+	margin-bottom:.5rem;
+}
+#playerDesc .clearSplash{
+	margin-top:.5rem;
+	margin-left:7.3rem;
+}
+#footer {
+	padding:1.4rem 0; 
+	color:#808080;
+}
+#footer > * {
+	text-align:center;
+}
+
+@media all and (min-width: 0) and (max-width: 640px){ 
+	#matchResults {
+		width: 0 !important;
+	}
+	#logo span:first-child{
+		width:0 !important;
+	}
+	#logo span:last-child.expand{
+		width:5rem;
+		transition:1s;
+	}
 }
