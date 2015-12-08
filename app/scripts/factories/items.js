@@ -14,7 +14,7 @@ app.factory('items',['$http', function($http){
                     self.allItems = data.data;
                     self.item.name = self.allItems[id].name;
                     self.item.stats = self.allItems[id].plaintext;
-                    self.item.description = self.allItems[id].description;
+                    self.item.description = self.allItems[id].sanitizedDescription;
                     self.item.image = ("http://ddragon.leagueoflegends.com/cdn/5.20.1/img/item/" + self.allItems[id].id + ".png");
                     cb(self.item);
                     toBeCalled.forEach(function(item) {
@@ -31,7 +31,7 @@ app.factory('items',['$http', function($http){
                 self.item.image = ("http://ddragon.leagueoflegends.com/cdn/5.20.1/img/item/" + self.allItems[id].id + ".png");
                 self.item.name = self.allItems[id].name || "Rito Undefined";
                 self.item.stats = self.allItems[id].plaintext || "Rito Undefined";
-                self.item.description = self.allItems[id].description || "Rito Undefined";
+                self.item.description = self.allItems[id].sanitizedDescription || "Rito Undefined";
             }
             else {
                 self.item.image = ("http://ddragon.leagueoflegends.com/cdn/5.20.1/img/item/" + 1001 + ".png");
