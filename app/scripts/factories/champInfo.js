@@ -19,7 +19,7 @@ app.factory('champInfo',['$http', function($http){
                 self.champInfo.lore = data.lore;
                 self.champInfo.blurb = data.blurb;
                 self.champInfo.image = ("http://ddragon.leagueoflegends.com/cdn/5.22.1/img/champion/" + data.image.full);
-                self.champInfo.splash = ("http://ddragon.leagueoflegends.com/cdn/img/champion/splash/" + data.key + "_" + Math.floor((Math.random()*100%data.skins.length)) + ".jpg");
+                self.champInfo.splash = ("http://ddragon.leagueoflegends.com/cdn/img/champion/splash/" + data.key + "_" + data.skins[Math.floor((Math.random()*100%data.skins.length))].num + ".jpg");
                 cb(self.champInfo);
             });
     };

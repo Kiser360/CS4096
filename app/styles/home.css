@@ -162,7 +162,7 @@
 	background:black;
 	background-size:cover;
 	margin-left:.5rem;
-	margin-top:.5rem;
+	position:absolute;
 }
 #playerDesc .header #playerName {
 	font-size:1.4rem;
