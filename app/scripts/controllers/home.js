@@ -12,7 +12,7 @@ app.directive('myEnter', function () {
     };
 });
 
-app.controller('home', ['$scope', 'champBuild', 'champInfo', "currGame", function($scope, champBuild, champInfo, currGame){
+app.controller('home', ['$scope', 'champBuild', 'champInfo', "currentGame", function($scope, champBuild, champInfo, currentGame){
 	angular.element(document).ready(function(){
 		console.log("Document Ready");
 
@@ -36,7 +36,7 @@ app.controller('home', ['$scope', 'champBuild', 'champInfo', "currGame", functio
 		champ: "Aatrox"
 	};
 
-	currGame.getGame("PewDePie", function(data) {
+	currentGame.getGame("35301382", function(data) {
 		console.log(data);
 	});
 
@@ -77,6 +77,8 @@ app.controller('home', ['$scope', 'champBuild', 'champInfo', "currGame", functio
 	$scope.searchInProgress = function() {
 		$scope.inProgress = true;
 		$scope.clearSuggestions();
+		currentGame.getGame("35301382", function(data) {
+		});
 		champBuild.getChampion("Lulu", function(data) {
 			$scope.champion = data;
 		});
